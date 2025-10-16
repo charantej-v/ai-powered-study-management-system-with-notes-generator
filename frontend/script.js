@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // API Configuration
 // Use the backend URL from environment or default to localhost
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000'
-    : 'https://ai-powered-study-management-system-with-g5ve.onrender.com';
+const API_BASE_URL = 'https://ai-powered-study-management-system-with-g5ve.onrender.com'
 
 // Set minimum date for date inputs
 window.addEventListener('load', () => {
