@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // API Configuration
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://ai-powered-study-management-system-with-x3mn.onrender.com';
 
 // Set minimum date for date inputs
 window.addEventListener('load', () => {
