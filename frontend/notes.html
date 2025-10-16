@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Generator - StudyAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <header class="page-header">
+            <h1>📝 Notes Generator</h1>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="file">Generate from File</button>
+            <button class="tab-btn" data-tab="ai">Generate with AI</button>
+            <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+        </div>
+
+        <!-- Generate from File Tab -->
+        <div id="fileTab" class="tab-content active">
+            <section class="form-section">
+                <h2>Generate Notes from Existing File</h2>
+                <form id="fileUploadForm">
+                    <div class="form-group">
+                        <label for="uploadFile">Select File (All types supported)</label>
+                        <input type="file" id="uploadFile">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload & Generate Notes</button>
+                </form>
+            </section>
+
+            <!-- Generated Notes Display -->
+            <section id="generatedNotesSection1" class="generated-notes" style="display: none;">
+                <div class="section-header">
+                    <h2>Generated Notes</h2>
+                    <div class="action-buttons">
+                        <button id="editNotesBtn1" class="btn btn-secondary">Edit</button>
+                        <button id="saveNotesBtn1" class="btn btn-secondary" style="display: none;">Save</button>
+                        <select id="downloadFormat1" class="btn btn-secondary">
+                            <option value="">Download As...</option>
+                            <option value="pdf">PDF</option>
+                            <option value="docx">Word</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="notesContent1" class="notes-content" contenteditable="false"></div>
+            </section>
+
+            <!-- Notes History -->
+            <section class="history-section">
+                <h2>Notes History</h2>
+                <div id="notesHistory1" class="history-list">
+                    <p class="empty-state">No notes yet. Upload a file to generate notes!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Generate with AI Tab -->
+        <div id="aiTab" class="tab-content">
+            <section class="form-section">
+                <h2>Generate AI Notes</h2>
+                <form id="aiNotesForm">
+                    <div class="form-group">
+                        <label for="noteTopic">Topic</label>
+                        <input type="text" id="noteTopic" required placeholder="e.g., Machine Learning Basics">
+                    </div>
+                    <div class="form-group">
+                        <label for="noteContent">Content / Description</label>
+                        <textarea id="noteContent" rows="6" required placeholder="Enter topic details or paste content here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate Notes</button>
+                </form>
+            </section>
+
+            <!-- Generated Notes Display -->
+            <section id="generatedNotesSection2" class="generated-notes" style="display: none;">
+                <div class="section-header">
+                    <h2>Generated Notes</h2>
+                    <div class="action-buttons">
+                        <button id="editNotesBtn2" class="btn btn-secondary">Edit</button>
+                        <button id="saveNotesBtn2" class="btn btn-secondary" style="display: none;">Save</button>
+                        <select id="downloadFormat2" class="btn btn-secondary">
+                            <option value="">Download As...</option>
+                            <option value="pdf">PDF</option>
+                            <option value="docx">Word</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="notesContent2" class="notes-content" contenteditable="false"></div>
+            </section>
+
+            <!-- Notes History -->
+            <section class="history-section">
+                <h2>Notes History</h2>
+                <div id="notesHistory2" class="history-list">
+                    <p class="empty-state">No notes yet. Generate your first notes above!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Flashcards Tab -->
+        <div id="flashcardsTab" class="tab-content">
+            <!-- Generate Flashcards Section -->
+            <section class="form-section">
+                <h2>Generate Flashcards</h2>
+                <form id="flashcardsForm">
+                    <div class="form-group">
+                        <label for="flashcardTopic">Topic</label>
+                        <input type="text" id="flashcardTopic" required placeholder="e.g., JavaScript Fundamentals">
+                    </div>
+                    <div class="form-group">
+                        <label for="flashcardCount">Number of Cards</label>
+                        <input type="number" id="flashcardCount" min="1" max="20" value="5">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generate Flashcards</button>
+                </form>
+            </section>
+
+            <!-- Flashcards Display -->
+            <section id="flashcardsSection" class="flashcards-section" style="display: none;">
+                <div class="section-header">
+                    <h2>Flashcards</h2>
+                    <div class="flashcard-progress">
+                        <span id="flashcardProgress">0 / 0 Known</span>
+                    </div>
+                </div>
+                <div id="flashcardsContainer" class="flashcards-container"></div>
+                <div class="action-buttons">
+                    <select id="downloadFlashcardsFormat" class="btn btn-secondary">
+                        <option value="">Download As...</option>
+                        <option value="pdf">PDF</option>
+                        <option value="docx">Word</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Flashcards History -->
+            <section class="history-section">
+                <h2>Flashcards History</h2>
+                <div id="flashcardsHistory" class="history-list">
+                    <p class="empty-state">No flashcards yet. Generate your first set above!</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

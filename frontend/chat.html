@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant - StudyAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeToggle" aria-label="Toggle theme">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+    </div>
+
+    <div class="container chat-container">
+        <header class="page-header">
+            <h1>💬 AI Chat Assistant</h1>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </header>
+
+        <div class="chat-wrapper">
+            <!-- Chat Messages Area -->
+            <div id="chatMessages" class="chat-messages">
+                <div class="welcome-message">
+                    <h2>👋 Hello! I'm your AI Study Assistant</h2>
+                    <p>Ask me anything about your studies, and I'll help you learn better!</p>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area">
+                <form id="chatForm">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        placeholder="Ask me anything about your studies..." 
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chat Actions -->
+        <div class="chat-actions">
+            <select id="exportChatFormat" class="btn btn-secondary">
+                <option value="">Export Chat As...</option>
+                <option value="pdf">PDF</option>
+                <option value="docx">Word</option>
+            </select>
+            <button id="clearChatBtn" class="btn btn-danger">Clear Chat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
