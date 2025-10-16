@@ -1,0 +1,1 @@
+# ai-powered-study-management-system-with-notes-generator
